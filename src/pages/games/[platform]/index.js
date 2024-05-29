@@ -1,15 +1,15 @@
-export { default } from "./platform";
 import { Platform, Game } from "@/api";
+export { default } from "./platform";
 
-export async function getServerSizeProps(context) {
-  const { query, params } = props;
+export async function getServerSideProps(context) {
+  const { query, params } = context;
   const { page = 1 } = query;
   const { platform } = params;
 
   const platformController = new Platform();
-  const gameController = new Game();
-
   const responsePlatform = await platformController.getBySlug(platform);
+
+  const gameController = new Game();
   const responseGame = await gameController.getGamesByPlatformSlug(
     platform,
     page

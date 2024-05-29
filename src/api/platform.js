@@ -20,8 +20,8 @@ export class Platform {
 
   async getBySlug(slug) {
     try {
-      const filter = `filters[slug][$eq]=${slug}`;
-      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAMES}?${filter}`;
+      const filters = `filters[slug][$eq]=${slug}`;
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.PLATFORM}?${filters}`;
 
       const response = await fetch(url);
       const result = await response.json();
