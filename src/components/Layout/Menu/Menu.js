@@ -5,14 +5,17 @@ import { useState, useEffect } from "react";
 import { Platform } from "@/api";
 import { map } from "lodash";
 import classNames from "classnames";
+import { useRouter } from "next/router";
 
 const platformController = new Platform();
 
 export function Menu(props) {
   const { isOpenSearch } = props;
+  const router = useRouter();
 
   const [platforms, setPlatforms] = useState(null);
-  const [showSearch, setShowSearch] = useState(false);
+  const [showSearch, setShowSearch] = useState(isOpenSearch);
+  const [searchText, setSearchText] = useState("");
 
   const openCloseSearch = () => setShowSearch((prevState) => !prevState);
 
@@ -27,6 +30,14 @@ export function Menu(props) {
       }
     })();
   }, []);
+
+  useEffect(() => {
+    setSearchText(router.query.s || "");
+  }, [router.query]);
+
+  const onSearch = (text) => {
+    router.replace(`/search?s=${text}`);
+  };
 
   return (
     <div className={styles.platforms}>
@@ -51,10 +62,12 @@ export function Menu(props) {
         })}
       >
         <Input
-          id="game-search"
+          id="search-games"
           placeholder="Buscador"
           className={styles.input}
           focus={true}
+          onChange={(_, data) => onSearch(data.value)}
+          value={searchText}
         ></Input>
         <Icon
           name="close"
