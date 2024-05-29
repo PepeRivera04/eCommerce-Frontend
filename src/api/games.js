@@ -42,4 +42,24 @@ export class Game {
       throw error;
     }
   }
+
+  async getGamesByPlatformSlug(slug, page) {
+    try {
+      const filter = `filters[platform][$eq]=${slug}`;
+      const pagination = `pagination[page]=${page}&pagination[pageSize]=30`;
+      const populate = "populate=*";
+      const urlParams = `${filter}&${pagination}&${populate}`;
+
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAMES}?${urlParams}`;
+
+      const response = await fetch(url);
+      const result = await response.json();
+
+      if (response.status !== 200) throw result;
+
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
