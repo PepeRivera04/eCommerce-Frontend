@@ -45,7 +45,7 @@ export function Panel(props) {
             <span className={styles.price}>{buyPrice}€</span>
           </div>
           <Button primary fluid onClick="">
-            Comprar
+            Comprar ahora
           </Button>
 
           <WishlistIcon gameId={gameId} className={styles.heart}></WishlistIcon>

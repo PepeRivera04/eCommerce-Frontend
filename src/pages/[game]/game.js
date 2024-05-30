@@ -15,6 +15,17 @@ export default function GamePage(props) {
         <Game.Panel gameId={game.id} game={game.attributes}></Game.Panel>
 
         <Separator height={50}></Separator>
+
+        <Game.Info game={game.attributes}></Game.Info>
+
+        <Separator height={30}></Separator>
+
+        <Game.Media
+          video={game.attributes.video}
+          screenshots={game.attributes.screenshots.data}
+        ></Game.Media>
+
+        <Separator height={50}></Separator>
       </BasicLayout>
     </>
   );
