@@ -1,0 +1,88 @@
+@import "~/src/scss/index.scss";
+
+.panel {
+  position: relative;
+  display: flex !important;
+  margin-top: -150px;
+}
+
+.imgContainer {
+  width: 50%;
+  padding-right: 12px;
+
+  > img {
+    border-radius: 15px;
+  }
+}
+
+.actionsContainer {
+  width: 50%;
+  padding-left: 12px;
+  height: 100%;
+
+  > div {
+    background-color: $background-quaternary__blur;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  > h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.moreInfo {
+  background-color: $background-quaternary__blur;
+  backdrop-filter: blur(15px);
+  display: flex;
+  border-radius: 50px;
+  margin-bottom: 40px;
+
+  .platforms {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+
+    > img {
+      width: 15%;
+      margin: 5px;
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+.price {
+  margin-bottom: 40px;
+
+  .originalPrice {
+    font-size: 18px;
+    text-decoration: line-through;
+
+    > i {
+      font-size: 12px;
+    }
+  }
+  .discount {
+    margin: 0 10px;
+    color: $primary;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 35px;
+  }
+}
+
+.heart {
+  margin: 0 !important;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px !important;
+}

@@ -33,9 +33,10 @@ export function Menu(props) {
 
   useEffect(() => {
     setSearchText(router.query.s || "");
-  }, [router.query]);
+  }, []);
 
   const onSearch = (text) => {
+    setSearchText(text);
     router.replace(`/search?s=${text}`);
   };
 
