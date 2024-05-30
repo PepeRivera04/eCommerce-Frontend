@@ -10,7 +10,6 @@ import {
 
 export default function PlatformPage(props) {
   const { games, platform, pagination } = props;
-  console.log(props);
 
   const hasProducts = size(games) > 0;
 

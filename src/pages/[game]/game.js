@@ -4,7 +4,6 @@ import { Separator } from "@/components/Shared";
 
 export default function GamePage(props) {
   const { game } = props;
-  console.log(props);
 
   const wallpaper = game.attributes.wallpaper.data.attributes.url;
 

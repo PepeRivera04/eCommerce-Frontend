@@ -4,4 +4,4 @@ export * from "./user";
 export * from "./platform";
 export * from "./address";
 export * from "./games";
-
+export * from "./wishlist";

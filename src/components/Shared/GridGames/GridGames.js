@@ -7,7 +7,6 @@ import { Label } from "@/components/Shared";
 export function GridGames(props) {
   const { games } = props;
 
-  console.log(games);
   return (
     <div className={styles.gridGames}>
       {map(games, (game) => (

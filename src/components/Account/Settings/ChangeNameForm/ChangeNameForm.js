@@ -17,8 +17,6 @@ export function ChangeNameForm() {
     onSubmit: async (formValue) => {
       try {
         await userController.updateMe(user.id, formValue);
-        console.log("FORMULARIO ENVIADO");
-        console.log(formValue);
       } catch (error) {
         console.error(error);
       }
