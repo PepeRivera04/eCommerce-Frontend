@@ -5,11 +5,12 @@ import { Wishlist } from "@/api";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks";
 import { authFetch } from "@/utils";
+import { remove } from "lodash";
 
 const wishlistController = new Wishlist();
 
 export function WishlistIcon(props) {
-  const { gameId, className } = props;
+  const { gameId, className, removeCallback } = props;
 
   const { user } = useAuth();
 
@@ -36,6 +37,10 @@ export function WishlistIcon(props) {
     try {
       await wishlistController.delete(hasWishlist.id);
       setHasWishlist(false);
+
+      if (removeCallback) {
+        removeCallback();
+      }
     } catch (error) {
       throw error;
     }
