@@ -103,4 +103,21 @@ export class Game {
       throw error;
     }
   }
+
+  async getGameById(gameId) {
+    try {
+      const populate = "populate[0]=cover&populate[1]=platforms";
+
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAMES}/${gameId}?${populate}`;
+
+      const response = await fetch(url);
+      const result = await response.json();
+
+      if (response.status !== 200) throw result;
+
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
