@@ -3,21 +3,29 @@ import { useState, useEffect } from "react";
 import { Button } from "semantic-ui-react";
 import { map, forEach } from "lodash";
 import { useAuth, useCart } from "@/hooks";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Cart } from "@/api";
 import { fn } from "@/utils";
+import { useRouter } from "next/router";
 
 const cartController = new Cart();
 
 export function Resume(props) {
   const { games, addressSelected } = props;
 
-  const [total, setTotal] = useState(null);
+  const router = useRouter();
 
+  const [total, setTotal] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const { user } = useAuth();
+  const { deleteAllItems } = useCart();
 
   useEffect(() => {
     let totalTemp = 0;
-
     {
       forEach(games, (game) => {
         const price = fn.calcDiscountedPrice(
@@ -34,9 +42,40 @@ export function Resume(props) {
   const onPay = async () => {
     setLoading(true);
 
+    if (!stripe || !elements) {
+      setLoading(false);
+      return;
+    }
+
+    // Generación del token que usa Stripe para validar la compra
+    const cardElement = elements.getElement(CardElement);
+    const result = await stripe.createToken(cardElement);
+
+    if (result.error) {
+      console.error(result.error.message);
+    } else {
+      const response = await cartController.paymentCart(
+        result.token,
+        games,
+        user.id,
+        addressSelected
+      );
+
+      if (response.status === 200) {
+        deleteAllItems();
+        goToStepThree();
+      } else {
+        console.error("Error al realizar el pago del pedido");
+      }
+    }
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
+  };
+
+  const goToStepThree = () => {
+    router.replace({ query: { ...router.query, step: 3 } });
   };
 
   if (!total) return null;
@@ -72,7 +111,13 @@ export function Resume(props) {
           <span>{total}€</span>
         </div>
 
-        <Button primary fluid disabled={!addressSelected}>
+        <Button
+          primary
+          fluid
+          disabled={!addressSelected}
+          onClick={onPay}
+          loading={loading}
+        >
           Pagar
         </Button>
       </div>

@@ -31,9 +31,8 @@ export function Resume(props) {
           totals.discount + (game.attributes.price - price) * game.quantity,
         price: totals.price + price * game.quantity,
       };
-
-      setTotals(totals);
     });
+    setTotals(totals);
   }, [games]);
 
   const goToStepTwo = () => {

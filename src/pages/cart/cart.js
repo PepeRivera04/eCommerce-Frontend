@@ -37,7 +37,7 @@ export default function CartPage() {
       <CartLayout>
         {currentStep === 1 && <Cart.StepOne games={games}></Cart.StepOne>}
         {currentStep === 2 && <Cart.StepTwo games={games}></Cart.StepTwo>}
-        {currentStep === 3 && <p>STEP THREE</p>}
+        {currentStep === 3 && <Cart.StepThree></Cart.StepThree>}
       </CartLayout>
     </>
   );

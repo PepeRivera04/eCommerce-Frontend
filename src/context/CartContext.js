@@ -31,6 +31,11 @@ export function CartProvider(props) {
     refreshTotalCart();
   };
 
+  const deleteAllItems = () => {
+    cartController.deleteAll();
+    refreshTotalCart();
+  };
+
   const changeQuantityItem = (gameId, quantity) => {
     cartController.changeQuantity(gameId, quantity);
     refreshTotalCart();
@@ -41,7 +46,7 @@ export function CartProvider(props) {
     addCart,
     total,
     deleteItem,
-    deleteAllItems: () => {},
+    deleteAllItems,
     changeQuantityItem,
   };
 
