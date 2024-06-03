@@ -1,4 +1,5 @@
 import { CartLayout } from "@/layouts";
+import { Cart } from "@/components/Cart";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useCart } from "@/hooks";
@@ -35,7 +36,7 @@ export default function CartPage() {
   return (
     <>
       <CartLayout>
-        {currentStep === 1 && <p>STEP ONE</p>}
+        {currentStep === 1 && <Cart.StepOne games={games}></Cart.StepOne>}
         {currentStep === 2 && <p>STEP TWO</p>}
         {currentStep === 3 && <p>STEP THREE</p>}
       </CartLayout>
