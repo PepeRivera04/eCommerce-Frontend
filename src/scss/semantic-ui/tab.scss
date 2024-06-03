@@ -21,9 +21,29 @@
       color: $primary;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    a.item {
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 468px) {
+    a.item {
+      font-size: 10px;
+    }
+  }
 }
 
 .ui.tab.segment.active {
   background-color: transparent;
   padding: 20px 0 0 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 4px 0 0 0;
+  }
+
+  @media screen and (max-width: 468px) {
+    padding: 1px 0 0 0;
+  }
 }

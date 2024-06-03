@@ -11,6 +11,10 @@
   justify-content: center;
   height: 100%;
   padding: 40px 0;
+
+  @media screen and (max-width: 768px) {
+    height: 50%;
+  }
 }
 
 .block {
@@ -39,5 +43,35 @@
   span {
     font-size: 13px;
     color: $text-secondary;
+  }
+
+  @media screen and (max-width: 768px) {
+    i {
+      font-size: 25px;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 468px) {
+    padding: 0 15px;
+
+    i {
+      font-size: 20px;
+    }
+
+    h5 {
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 10px;
+    }
   }
 }

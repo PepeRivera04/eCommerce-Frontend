@@ -4,6 +4,10 @@
   position: relative;
   display: flex !important;
   margin-top: -150px;
+
+  @media screen and (max-width: 468px) {
+    flex-direction: column;
+  }
 }
 
 .imgContainer {
@@ -12,6 +16,10 @@
 
   > img {
     border-radius: 15px;
+  }
+
+  @media screen and (max-width: 468px) {
+    width: 100%;
   }
 }
 
@@ -32,6 +40,12 @@
 
   > h2 {
     margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 468px) {
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 0;
   }
 }
 

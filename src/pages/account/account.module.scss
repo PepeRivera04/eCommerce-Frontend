@@ -14,10 +14,41 @@
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    > div {
+      > a {
+        &:last-of-type {
+          right: 0;
+        }
+        &:nth-last-of-type(2) {
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 468px) {
+    > div {
+      > a {
+        &:last-of-type {
+          right: 0;
+        }
+        &:nth-last-of-type(2) {
+          right: 15px;
+        }
+      }
+    }
+  }
 }
 
 .containerForms {
   display: flex;
   margin: 0 -10px;
   margin-top: 50px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 }

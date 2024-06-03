@@ -27,6 +27,23 @@
   display: flex !important;
   justify-content: flex-end;
   padding-top: 30px;
+
+  img {
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-left: 200px;
+    img {
+      opacity: 0.5;
+    }
+  }
+
+  @media screen and (max-width: 468px) {
+    img {
+      visibility: hidden;
+    }
+  }
 }
 
 .infoContainer {
