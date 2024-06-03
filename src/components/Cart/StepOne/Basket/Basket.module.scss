@@ -32,6 +32,10 @@
     width: 190px;
     border-radius: 8px;
     margin-right: 20px;
+
+    @media screen and (max-width: 468px) {
+      width: 90px;
+    }
   }
 
   > div {
