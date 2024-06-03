@@ -1,5 +1,6 @@
 import styles from "./StepOne.module.scss";
 import { Basket } from "./Basket";
+import { Resume } from "./Resume";
 
 export function StepOne(props) {
   const { games } = props;
@@ -11,7 +12,7 @@ export function StepOne(props) {
       </div>
 
       <div className={styles.right}>
-        <p>RESUME</p>
+        <Resume games={games}></Resume>
       </div>
     </div>
   );
