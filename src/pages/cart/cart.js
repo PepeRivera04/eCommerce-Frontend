@@ -25,7 +25,6 @@ export default function CartPage() {
           const response = await gameController.getGameById(item.id);
           data.push({ ...response.data, quantity: item.quantity });
         }
-        console.log(data);
         setGames(data);
       } catch (error) {
         console.error(error);
@@ -37,7 +36,7 @@ export default function CartPage() {
     <>
       <CartLayout>
         {currentStep === 1 && <Cart.StepOne games={games}></Cart.StepOne>}
-        {currentStep === 2 && <p>STEP TWO</p>}
+        {currentStep === 2 && <Cart.StepTwo games={games}></Cart.StepTwo>}
         {currentStep === 3 && <p>STEP THREE</p>}
       </CartLayout>
     </>
