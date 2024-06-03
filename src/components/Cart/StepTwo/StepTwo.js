@@ -6,6 +6,7 @@ import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { Payment } from "./Payment";
+import { Resume } from "./Resume";
 
 const stripeInit = loadStripe(ENV.STRIPE_TOKEN);
 
@@ -28,7 +29,7 @@ export function StepTwo(props) {
         </div>
 
         <div className={styles.right}>
-          <p>RESUME</p>
+          <Resume games={games} addressSelected={addressSelected}></Resume>
         </div>
       </div>
     </Elements>
