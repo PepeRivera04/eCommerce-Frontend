@@ -1,7 +1,13 @@
 import { BasicLayout } from "@/layouts";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { Info, Settings, Address, Wishlist } from "@/components/Account";
+import {
+  Info,
+  Settings,
+  Address,
+  Wishlist,
+  Orders,
+} from "@/components/Account";
 import { Tab } from "semantic-ui-react";
 import styles from "./account.module.scss";
 import { useAuth } from "@/hooks";
@@ -26,7 +32,8 @@ export default function Account() {
       menuItem: "Mis pedidos",
       render: () => (
         <Tab.Pane attached={false}>
-          <p>Mis pedidos...</p>
+          <Orders></Orders>
+          <Separator height={80}></Separator>
         </Tab.Pane>
       ),
     },
