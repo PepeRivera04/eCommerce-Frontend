@@ -15,7 +15,7 @@ export function AuthProvider(props) {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  //   USO UNA FUNCIÓN AUTOEJECUTABLE DENTRO DEL USEEFFECT QUE CONTROLA EL TOKEN
+  // FUNCIÓN AUTOEJECUTABLE QUE CONTROLA EL TOKEN
   useEffect(() => {
     (async () => {
       const token = tokenCtrl.getToken();
@@ -55,6 +55,7 @@ export function AuthProvider(props) {
     setUser(null);
   };
 
+  // FUNCIÓN QUE ACTUALIZA EL USUARIO
   const updateUser = (key, value) => {
     setUser({
       ...user,
