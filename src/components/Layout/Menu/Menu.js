@@ -49,7 +49,6 @@ export function Menu(props) {
           className={styles.links}
         >
           <Image src={platform.attributes.icon.data.attributes.url}></Image>
-          {platform.attributes.title}
         </Link>
       ))}
 
