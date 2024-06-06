@@ -3,6 +3,11 @@
 .account {
   display: flex;
 
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   button {
     background-color: transparent !important;
     margin-left: 10px !important;
@@ -19,6 +24,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media screen and (max-width: 480px) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -26,6 +35,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 480px) {
+      background-color: $background-tertiary !important;
+      border-radius: 10px;
+      border: 2px solid $background-tertiary;
+    }
 
     > div {
       background-color: $primary;
