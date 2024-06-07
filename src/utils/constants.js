@@ -1,6 +1,6 @@
 export const ENV = {
-  SERVER_HOST: "https://ppgamingbackend.up.railway.app/",
-  API_URL: "https://ppgamingbackend.up.railway.app/api",
+  SERVER_HOST: process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
+  API_URL: `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'}/api`,
   ENDPOINTS: {
     AUTH: {
       REGISTER: "auth/local/register",
