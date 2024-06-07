@@ -1,6 +1,6 @@
 export const ENV = {
-  SERVER_HOST: "https://ppgaming.up.railway.app/",
-  API_URL: "https://ppgaming.up.railway.app/api",
+  SERVER_HOST: "https://ppgamingbackend.up.railway.app/",
+  API_URL: "https://ppgamingbackend.up.railway.app/api",
   ENDPOINTS: {
     AUTH: {
       REGISTER: "auth/local/register",
