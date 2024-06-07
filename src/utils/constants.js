@@ -1,6 +1,6 @@
 export const ENV = {
   SERVER_HOST: "https://ppgamingbackend.vercel.app/",
-  API_URL: "https://ppgamingbackend.vercel.app//api",
+  API_URL: "https://ppgamingbackend.vercel.app/api",
   ENDPOINTS: {
     AUTH: {
       REGISTER: "auth/local/register",
