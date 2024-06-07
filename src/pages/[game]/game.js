@@ -1,5 +1,3 @@
-"use client";
-
 import { BasicLayout } from "@/layouts";
 import { Game } from "@/components/Game";
 import { Separator } from "@/components/Shared";
