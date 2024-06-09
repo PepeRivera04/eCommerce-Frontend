@@ -24,7 +24,7 @@ export class Game {
       const filterPlatform =
         platformId && `filters[platform][id][$eq]=${platformId}`;
 
-      const paginationLimit = `pagination[limit]=6`;
+      const paginationLimit = `pagination[limit]=3`;
       const sort = "sort[0]=publishedAt:desc";
       const populate = "populate=*";
 
