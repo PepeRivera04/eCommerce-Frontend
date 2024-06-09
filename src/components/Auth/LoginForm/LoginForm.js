@@ -23,6 +23,10 @@ export function LoginForm() {
         login(response.jwt);
       } catch (error) {
         console.error(error);
+        formik.setFieldError(
+          "password",
+          error.message || "Error de autenticación"
+        );
       }
     },
   });
@@ -44,7 +48,11 @@ export function LoginForm() {
         placeholder="Contraseña"
         value={formik.values.password}
         onChange={formik.handleChange}
-        error={formik.errors.password}
+        error={
+          formik.touched.password && formik.errors.password
+            ? { content: formik.errors.password }
+            : null
+        }
       ></Form.Input>
 
       <Form.Button type="submit" fluid loading={formik.isSubmitting}>
