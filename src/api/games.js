@@ -46,7 +46,7 @@ export class Game {
   async getGamesByPlatformSlug(slug, page) {
     try {
       const filters = `filters[platforms][slug][$eq]=${slug}`;
-      const pagination = `pagination[page]=${page}&pagination[pageSize]=10`;
+      const pagination = `pagination[page]=${page}&pagination[pageSize]=9`;
       const populate = "populate=*";
       const urlParams = `${filters}&${pagination}&${populate}`;
 
