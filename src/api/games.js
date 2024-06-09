@@ -19,7 +19,7 @@ export class Game {
     }
   }
 
-  async getLatestPublished({ limit = 6, platformId = null }) {
+  async getLatestPublished({ platformId = null }) {
     try {
       const filterPlatform =
         platformId && `filters[platform][id][$eq]=${platformId}`;
