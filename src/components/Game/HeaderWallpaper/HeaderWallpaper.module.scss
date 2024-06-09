@@ -16,8 +16,8 @@
     clip-path: polygon(0 100%, 100% 100%, 0 0);
   }
 
-  > image {
-    object-fit: cover !important;
-    width: 100% !important;
+  .imagen {
+    object-fit: cover;
+    width: 100%;
   }
 }

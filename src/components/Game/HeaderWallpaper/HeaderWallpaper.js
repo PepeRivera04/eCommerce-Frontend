@@ -6,7 +6,7 @@ export function HeaderWallpaper(props) {
 
   return (
     <div className={styles.headerWallpaper}>
-      <Image src={image}></Image>
+      <Image src={image} className={styles.imagen}></Image>
     </div>
   );
 }
